@@ -9,7 +9,7 @@ use iced::{
 };
 
 fn main() -> iced::Result {
-    iced::run(App::update, App::view)
+    iced::application(App::default,App::update,App::view).theme(App::theme).run()
 }
 #[derive(Clone, Copy, Debug)]
 enum Message {
