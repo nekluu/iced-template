@@ -21,6 +21,10 @@ struct App {
     stream_value: usize,
 }
 impl App {
+    #[inline]
+    fn theme(&self) -> iced::Theme {
+        iced::Theme::CatppuccinMacchiato
+    }
     fn update(&mut self, message: Message) -> Task<Message> {
         match message {
             Message::Start => Task::run(stream(), Message::Data),
